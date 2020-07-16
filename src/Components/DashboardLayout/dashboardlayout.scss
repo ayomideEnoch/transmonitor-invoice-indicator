@@ -1,0 +1,280 @@
+.dashboard {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    overflow: scroll;
+    height: 100vh;
+  }
+  &.show {
+    .dashboard__side-nav {
+      width: 250px;
+    }
+    .side-nav {
+      &__heading {
+        opacity: 1;
+      }
+      .invoice-btn {
+        opacity: 1;
+      }
+      &__group {
+        margin-bottom: 45px;
+        &:first-child {
+          margin-top: 30px;
+        }
+      }
+
+      &__item {
+        padding-left: 35px;
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__main {
+    padding: 40px 80px 30px 20px;
+    @media (max-width: 1200px) {
+      padding-left: 120px;
+    }
+    @media (max-width: 780px) {
+      padding-right: 30px;
+      padding-left: 100px;
+    }
+  }
+  &__nav {
+    grid-column: 1/-1;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 1250px) {
+      position: fixed;
+      width: 100%;
+      z-index: 500;
+    }
+  }
+  &__header {
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(79, 79, 79, 0.07);
+    padding: 15px 80px 15px 40px;
+    overflow-x: hidden;
+    @media (max-width: 780px) {
+      padding-right: 20px;
+    }
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .options {
+        width: 8px;
+        display: none;
+        img {
+          width: 8px;
+        }
+        @media (max-width: 780px) {
+          display: block;
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &__item {
+        margin-left: 50px;
+        text-decoration: none;
+        color: #647787;
+        @media (max-width: 780px) {
+          display: block;
+          width: 100%;
+          margin-left: auto;
+          padding: 5px 5px;
+          text-align: center;
+          margin-left: 100px;
+        }
+        .notification {
+          position: relative;
+          margin-top: 10px !important;
+          &-count {
+            @media (max-width: 780px) {
+              margin-right: 90px;
+            }
+          }
+        }
+      }
+      &.show {
+        opacity: 1;
+        transition: opacity 200ms;
+        pointer-events: all;
+      }
+      @media (max-width: 780px) {
+        position: absolute;
+        display: flex;
+        background-color: #fff;
+        right: 0px;
+        padding-right: 100px;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 200px;
+        opacity: 0;
+        pointer-events: none;
+        margin-right: 25px;
+        margin-top: 60px;
+        padding: 20px;
+        align-items: center;
+        box-shadow: 0px 4px 50px rgba(79, 79, 79, 0.16);
+        padding: 5px;
+        margin-top: 100px;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        &__img {
+          height: 30px;
+          width: 30px;
+          border-radius: 50px;
+        }
+        &__text {
+          margin-right: 10px;
+        }
+        &__greeting {
+          font-size: 10px;
+          margin-top: 0;
+          margin-bottom: 0px;
+          text-align: right;
+        }
+        &__name {
+          margin: 0;
+        }
+      }
+      .notification {
+        position: relative;
+        &-count {
+          width: 18px;
+          height: 18px;
+          background-color: #1860ec;
+          color: #fff;
+          border-radius: 20px;
+          font-size: 9px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+        }
+      }
+    }
+  }
+  &__logo {
+    color: #1875f0;
+    font-size: 24px;
+    margin: 0;
+    font-family: Roboto;
+    font-weight: bold;
+    line-height: 28px;
+  }
+  &__side-nav {
+    background-color: #fff;
+    padding: 33px 0px 20px 0px;
+    color: #647787;
+    width: 250px;
+    transition: width 200ms;
+    @media (max-width: 1200px) {
+      height: 100vh;
+      width: 80px;
+      position: absolute;
+      padding-top: 70px;
+      box-shadow: 0px 4px 10px rgba(79, 79, 79, 0.07);
+      z-index: 200;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+    }
+    .invoice-btn {
+      @media (max-width: 1200px) {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    .mobile-hamburger {
+      display: none;
+      border: none;
+      outline: none;
+      font-size: 22px;
+      margin-left: 20px;
+      color: #787c90;
+      font-weight: 100;
+      @media (max-width: 1200px) {
+        display: inline-block;
+      }
+    }
+  }
+  .m-side {
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+  .side-nav {
+    &__heading {
+      font-size: 11px;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 5px;
+      margin-left: 40px;
+      @media (max-width: 1200px) {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    &__group {
+      @media (max-width: 1200px) {
+        margin-bottom: 0;
+      }
+      margin-bottom: 45px;
+      &:first-child {
+        margin-top: 30px;
+        @media (max-width: 1200px) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &__item {
+      display: block;
+      text-decoration: none;
+      color: #647787;
+      display: flex;
+      align-items: center;
+      padding: 10px 0px;
+      font-size: 11px;
+      padding-left: 35px;
+      border-left: 4px solid transparent;
+      transition: background-color 200ms ease;
+      @media (max-width: 1200px) {
+        padding-left: 20px;
+      }
+
+      span {
+        @media (max-width: 1200px) {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      &:hover,
+      &.active {
+        background-color: rgba(24, 117, 240, 0.1);
+        border-left: 4px solid #1875f0;
+      }
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}

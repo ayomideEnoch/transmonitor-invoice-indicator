@@ -1,0 +1,139 @@
+table {
+  background-color: #fff;
+  width: 100%;
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.table {
+  .table-bottom-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table-buttons {
+    button {
+      padding: 5px 10px;
+      border: 1px solid #ced0da;
+      background-color: transparent;
+      box-sizing: border-box;
+      border-radius: 2px;
+      color: #000;
+    }
+    button.active {
+      background-color: #1875f0;
+      border: none;
+      color: #fff;
+    }
+  }
+}
+
+td,
+th {
+  padding: 10px 15px;
+  text-align: left;
+  vertical-align: center;
+  min-height: 100px;
+  font-weight: 100;
+}
+
+td {
+  padding: 30px 15px;
+  color: #7f8fa4;
+  border-bottom: 1px solid #cccfd4;
+  .bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  .status {
+    padding: 0px 18px;
+    border: 1px solid #cccfd4;
+    margin-left: 10px;
+    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    height: 40px;
+  }
+  .caret {
+    margin-left: 20px;
+  }
+}
+
+td.dark {
+  color: #414042;
+}
+
+thead th {
+  background-color: #eaeef0;
+  color: #7f8fa4;
+}
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.initails {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #7f8fa4;
+  font-size: 10px;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-weight: normal;
+  @media (max-width: 780px) {
+    display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  tbody td {
+    width: 50%;
+    position: relative;
+    padding-top: 30px;
+    padding-left: 10px;
+  }
+  tbody td:before {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  tbody td:nth-of-type(1):before {
+    content: "Item Type";
+  }
+  tbody td:nth-of-type(2):before {
+    content: "Price";
+  }
+  tbody td:nth-of-type(3):before {
+    content: "Transaction";
+  }
+  tbody td:nth-of-type(4):before {
+    content: "Time";
+  }
+}
